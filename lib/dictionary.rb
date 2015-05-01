@@ -1,10 +1,12 @@
 class Dictionary
-attr_reader(:word, :definition)
 @@words = []
+attr_reader(:word, :definition)
 
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
+    @definition = attributes.fetch(:definition)
   end
+
 
   define_singleton_method(:all) do
     @@words
@@ -17,7 +19,4 @@ attr_reader(:word, :definition)
   define_singleton_method(:clear) do
     @@words = []
   end
-
-
-
 end
