@@ -1,0 +1,20 @@
+<h1>Dictionary</h1>
+<br>
+  <p>Definitions</p>
+
+  <ul>
+    <% @define.each() do |define| %>
+    <li><%= dictionary.define() %></li>
+    <% end %>
+  </ul>
+
+  <p>Add A Definition:</p>
+
+  <form action="/definition" method="post">
+    <div class="form-group">
+      <label for="definition">Definition List</label>
+      <input id="definition" name="definition" class="form-control" type="text">
+  </div>
+    <button type="submit">Add The Definition</button>
+  </form>
+  <a class="btn btn-success" href="/dictionary">Go To Dictionary</a>

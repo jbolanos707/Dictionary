@@ -1,0 +1,18 @@
+<h1>Dictionary</h1>
+  <p>Create your own custome dictionary!</p>
+
+  <ul>
+    <% @words.each() do |word| %>
+    <li><%= word.word() %></li>
+    <% end %>
+  </ul>
+
+  <p>Add a word to build create your dictionary:</p>
+
+  <form action="/dictionary" method="post">
+    <div class="form-group">
+      <label for="word">Word List</label>
+      <input id="word" name="word" class="form-control" type="text">
+  </div>
+    <button type="submit">Add The Word</button>
+  </form>

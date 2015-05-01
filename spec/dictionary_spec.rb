@@ -37,6 +37,14 @@ describe(Dictionary) do
     end
   end
 
+  describe('#add_definition') do
+    it("adds a definition to a word") do
+      test_word = Dictionary.new("kid")
+      test_definition = Definition.new("young person")
+      expect(test_word.test_definition.add_definition()).to(eq("young person"))
+    end
+  end
+
 end
 
 describe(Definition) do
@@ -51,4 +59,5 @@ describe(Definition) do
       expect(test_definition.define()).to(eq("young person"))
     end
   end
+
 end
