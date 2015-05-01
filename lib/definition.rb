@@ -1,8 +1,14 @@
 class Definition
-@@definitions = []
+  define_singleton_method(:clear) do
+    @@definitions = []
+  end
 
-  define_method(:initialize) do |definition|
-    @defintion = definition
+  define_method(:initialize) do |define|
+    @define = define
+  end
+
+  define_method(:define) do
+    @define
   end
 
   define_method(:save) do
@@ -11,9 +17,5 @@ class Definition
 
   define_singleton_method(:all) do
     @@defintions
-  end
-
-  define_singleton_method(:clear) do
-    @@definitions = []
   end
 end

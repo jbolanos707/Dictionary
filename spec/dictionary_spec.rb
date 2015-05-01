@@ -1,5 +1,5 @@
 require('rspec')
-require('dictionary')
+require('dictionary1')
 require('definition')
 
 describe(Dictionary) do
@@ -10,33 +10,45 @@ describe(Dictionary) do
 
   describe('#word') do
     it("returns the word") do
-      test_word = Dictionary.new({:word => "kid", :definition => "young person"})
+      test_word = Dictionary.new("kid")
       expect(test_word.word()).to(eq("kid"))
     end
   end
 
   describe('.all') do
-    it("should be empty at first") do
+    it("is empty at first") do
       expect(Dictionary.all()).to(eq([]))
     end
   end
 
   describe('#save') do
-    it("saves the word to the class") do
-      test_word = Dictionary.new({:word => "kid", :definition => "young person"})
+    it("adds a word to the array of saved words") do
+      test_word = Dictionary.new("puppy")
       test_word.save()
-      test_word2 = Dictionary.new({:word => "dog", :definition => "man's best friend"})
-      test_word2.save()
-      expect(Dictionary.all()).to(eq([test_word, test_word2]))
+      expect(Dictionary.all()).to(eq([test_word]))
+    end
+  end
+
+  describe(".clear") do
+    it("empties out all of the saved words") do
+      Dictionary.new("puppy").save()
+      Dictionary.clear()
+      expect(Dictionary.all()).to(eq([]))
     end
   end
 
 end
 
 describe(Definition) do
+
   before() do
-    Definition.clear()
+    Definition.clear
   end
 
-
+  describe('#define') do
+    it("lets you give it a definition") do
+      test_definition = Definition.new("young person")
+      expect(test_definition.define()).to(eq("young person"))
+    end
+  end
 end
