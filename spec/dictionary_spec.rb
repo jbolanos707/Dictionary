@@ -11,5 +11,13 @@ describe(Dictionary) do
     end
   end
 
+  describe('.all') do
+    it("should be an empty array at first") do
+      expect(Dictionary.all()).to(eq([]))
+    end
+  end
+
+
+
 
 end
