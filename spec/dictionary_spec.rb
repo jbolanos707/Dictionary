@@ -17,6 +17,17 @@ describe(Dictionary) do
     end
   end
 
+  describe('.save') do
+    it("saves the word to the class") do
+      test_word = Dictionary.new({:word => "kid"})
+      test_word.save()
+      test_word2 = Dictionary.new({:word => "dog"})
+      test_word2.save()
+      expect(Dictionary.all()).to(eq([test_word, test_word2]))
+    end
+  end
+
+
 
 
 

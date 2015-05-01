@@ -10,4 +10,8 @@ attr_reader(:word, :definition)
     @@words
   end
 
+  define_method(:save) do
+    @@words.push(self)
+  end
+
 end
